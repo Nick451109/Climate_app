@@ -56,11 +56,11 @@ let load = (data) => {
   plot(data); //llamada funcion plot
   bar(data);
 };
-
+//https://cors-anywhere.herokuapp.com/
 //load inocar
 let loadInocar = () => {
-  let URL_proxy = "http://localhost:8080/"; // Coloque el URL de acuerdo con la opción de proxy
-  let URL = URL_proxy + "https://www.inocar.mil.ec/mareas/consultan.php";
+  let URL_proxy = "https://cors-anywhere.herokuapp.com/"; // Coloque el URL de acuerdo con la opción de proxy
+  let URL = URL_proxy + "https://www.inocar.mil.ec/mareas/consultan.php"; //tabla de mareas
 
   fetch(URL)
     .then((response) => response.text())
@@ -76,7 +76,7 @@ let loadInocar = () => {
 };
 
 (function () {
-  let meteo = localStorage.getItem("meteo");
+  let meteo = localStorage.getItem("meteo");//xml
   if (meteo == null) {
     let URL =
       "https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m&daily=uv_index_max&timezone=America%2FLos_Angeles";
